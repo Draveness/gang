@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.1.0'
-gem 'puma', '~> 3.0'
 gem 'jbuilder', '~> 2.5'
+gem 'puma', '~> 3.0'
+gem 'rails', '~> 5.1.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
@@ -13,12 +13,12 @@ gem 'geocoder', '~> 1.4.4'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
   gem 'byebug', platform: :mri
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop', '~> 0.48.0', require: false
+  gem 'sqlite3'
 end
 
 group :production do
@@ -26,12 +26,12 @@ group :production do
 end
 
 group :development do
-  gem 'listen', '~> 3.0.5'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
   gem 'capistrano3-puma'
+  gem 'listen', '~> 3.0.5'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :test do

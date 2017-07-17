@@ -1,5 +1,5 @@
 class SitesController < ApplicationController
-  before_action :set_site, only: [:show, :update, :destroy]
+  before_action :set_site, only: %i[show update destroy]
 
   # GET /sites
   # GET /sites.json
@@ -9,8 +9,7 @@ class SitesController < ApplicationController
 
   # GET /sites/1
   # GET /sites/1.json
-  def show
-  end
+  def show; end
 
   # POST /sites
   # POST /sites.json
@@ -41,13 +40,14 @@ class SitesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_site
-      @site = Site.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def site_params
-      params.require(:site).permit(:name, :image, :latitude, :longitude)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_site
+    @site = Site.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def site_params
+    params.require(:site).permit(:name, :image, :latitude, :longitude)
+  end
 end
