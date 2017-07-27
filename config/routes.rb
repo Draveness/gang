@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :topics do
-    resources :subtopics
-  end
   scope :api do
     resources :users, only: %i[create show update]
     resources :tags, except: %i[destroy]
