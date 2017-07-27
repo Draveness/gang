@@ -14,6 +14,7 @@ gem 'geocoder', '~> 1.4.4'
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'byebug', platform: :mri
+  gem 'factory_girl_rails', '~> 4.8.0'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
@@ -36,7 +37,6 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'factory_girl_rails', '~> 4.8.0'
   gem 'faker', '~> 1.7.3'
   gem 'guard-rspec', require: false
   gem 'rails-controller-testing'

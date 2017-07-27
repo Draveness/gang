@@ -55,7 +55,7 @@ RSpec.describe CategoriesController, type: :controller do
       it 'updates the requested category' do
         put :update, params: { id: category.to_param, category: new_attributes }, session: valid_session
         category.reload
-        skip('Add assertions for updated state')
+        expect(category.name).to eq(new_attributes[:name])
       end
 
       it 'renders a JSON response with the category' do
@@ -74,12 +74,12 @@ RSpec.describe CategoriesController, type: :controller do
     end
   end
 
-  describe 'DELETE #destroy' do
-    it 'destroys the requested category' do
-      category = create :category
-      expect do
-        delete :destroy, params: { id: category.to_param }, session: valid_session
-      end.to change(Category, :count).by(-1)
-    end
-  end
+  # describe 'DELETE #destroy' do
+  #   it 'destroys the requested category' do
+  #     category = create :category
+  #     expect do
+  #       delete :destroy, params: { id: category.to_param }, session: valid_session
+  #     end.to change(Category, :count).by(-1)
+  #   end
+  # end
 end

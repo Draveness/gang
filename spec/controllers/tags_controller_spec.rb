@@ -55,7 +55,7 @@ RSpec.describe TagsController, type: :controller do
       it 'updates the requested tag' do
         put :update, params: { id: tag.to_param, tag: new_attributes }, session: valid_session
         tag.reload
-        skip('Add assertions for updated state')
+        expect(tag.name).to eq(new_attributes[:name])
       end
 
       it 'renders a JSON response with the tag' do
@@ -74,12 +74,12 @@ RSpec.describe TagsController, type: :controller do
     end
   end
 
-  describe 'DELETE #destroy' do
-    it 'destroys the requested tag' do
-      tag = create :tag
-      expect do
-        delete :destroy, params: { id: tag.to_param }, session: valid_session
-      end.to change(Tag, :count).by(-1)
-    end
-  end
+  # describe 'DELETE #destroy' do
+  #   it 'destroys the requested tag' do
+  #     tag = create :tag
+  #     expect do
+  #       delete :destroy, params: { id: tag.to_param }, session: valid_session
+  #     end.to change(Tag, :count).by(-1)
+  #   end
+  # end
 end

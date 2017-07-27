@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  resources :tags
-  resources :categories
-  resources :topics
-  resources :sites
+  namespace :topics do
+    resources :subtopics
+  end
   scope :api do
     resources :users, only: %i[create show update]
+    resources :tags, except: %i[destroy]
+    resources :categories, except: %i[destroy]
+    resources :sites, except: %i[destroy]
+    resources :topics, except: %i[destroy] do
+      resources :subtopics, controller: 'topics/subtopics'
+    end
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
