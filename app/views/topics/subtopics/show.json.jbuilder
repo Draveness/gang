@@ -1,1 +1,1 @@
-json.partial! 'topics/subtopics/topics_subtopic', topics_subtopic: @topics_subtopic
+json.partial! 'topics/subtopics/topics_subtopic', topic_subtopic: @topic_subtopic

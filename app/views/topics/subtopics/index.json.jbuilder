@@ -1,1 +1,1 @@
-json.array! @topics_subtopics, partial: 'topics/subtopics/topics_subtopic', as: :topics_subtopic
+json.array! @topic_subtopics, partial: 'topics/subtopics/topics_subtopic', as: :topic_subtopic
