@@ -1,5 +1,11 @@
 class Site < ApplicationRecord
-  validates_presence_of :name
-  validates_presence_of :longitude
-  validates_presence_of :latitude
+  validates :name,
+            presence: true
+
+  validates :latitude,
+            presence: true
+  validates :longitude,
+            presence: true
+
+  has_many :activities
 end

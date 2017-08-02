@@ -1,15 +1,19 @@
 class SitesController < ApplicationController
-  before_action :set_site, only: %i[show update destroy]
+  before_action :set_site,
+                only: %i[show update destroy]
 
   # GET /sites
   # GET /sites.json
   def index
     @sites = Site.all
+    render json: @sites
   end
 
   # GET /sites/1
   # GET /sites/1.json
-  def show; end
+  def show
+    render json: @site
+  end
 
   # POST /sites
   # POST /sites.json

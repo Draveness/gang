@@ -1,11 +1,15 @@
 class TopicsController < ApplicationController
-  before_action :set_topic, only: %i[show update destroy]
+  before_action :set_topic,
+                only: %i[show update destroy]
 
   def index
     @topics = Topic.all
+    render json: @topics
   end
 
-  def show; end
+  def show
+    render json: @topic
+  end
 
   def create
     @topic = Topic.new topic_params

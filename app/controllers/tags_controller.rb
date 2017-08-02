@@ -1,15 +1,19 @@
 class TagsController < ApplicationController
-  before_action :set_tag, only: %i[show update destroy]
+  before_action :set_tag,
+                only: %i[show update destroy]
 
   # GET /tags
   # GET /tags.json
   def index
     @tags = Tag.all
+    render json: @tags
   end
 
   # GET /tags/1
   # GET /tags/1.json
-  def show; end
+  def show
+    render json: @tag
+  end
 
   # POST /tags
   # POST /tags.json
